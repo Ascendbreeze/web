@@ -197,7 +197,6 @@
     </div>
     </div>
 
-
 <style type="text/css">
 input {
 width: 100px;
@@ -221,8 +220,35 @@ background-color: rgba(66, 139, 202, 1);
     <script src="js/bootstrap.min.js"></script>
     <script src="js/plugin.js"></script>
     
-    <audio autoplay="autopaly">
-    <source src="AniFace - Where are you.mp3" type="audio/mp3" />
-     </audio>
+
+     
+     
+     
+<head>
+<script type="text/javascript">
+        var audioTag = document.createElement('audio');
+        if (!(!!(audioTag.canPlayType) && ("no" != audioTag.canPlayType("audio/mpeg")) && ("" != audioTag.canPlayType("audio/mpeg")))) {
+            AudioPlayer.embed("audioplayer_1", {soundFile: "your.mp3", transparentpagebg: "yes"});
+            $( '#audioplayer').hide();
+     }
+        else 
+        {
+           $( '#audioplayer' ).audioPlayer();
+        }       
+</script>
+</head>
+<body>
+    <p id="audioplayer_1"></p>
+    <audio id="audioplayer" preload="auto" controls style="width: 100%;" >
+        <source src="AniFace - Where are you.mp3" type="audio/mp3">
+    </audio>    
 </body>
+
+
+
+
+
+
+
+
 </html>
